@@ -1,3 +1,9 @@
+{{! passport error we want to check for}}
+{{#if error}}
+<div class="alert alert-danger">{{error}}</div>
+{{/if}}
+
+{{! Errors array we are looping through}}
 {{#each errors}}
 <div class="alert alert-danger">{{text}}</div>
 {{else}}

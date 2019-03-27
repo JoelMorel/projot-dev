@@ -13,6 +13,13 @@ router.get("/login", (req, res) => {
   res.render("users/login");
 });
 
+// User Login Route
+router.get("/logout", (req, res) => {
+  req.logout();
+  req.flash("success_msg", "Logged out");
+  res.redirect("/users/login");
+});
+
 // User Register Route
 router.get("/register", (req, res, next) => {
   res.render("users/register");
