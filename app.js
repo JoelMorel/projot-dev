@@ -23,11 +23,22 @@ const db = require("./config/database");
 
 // Map global promise - get rid of warning
 mongoose.Promise = global.Promise;
+
 // Connect to mongoose
-mongoose
-  .connect(db.mongoURI, { useNewUrlParser: true })
-  .then(() => console.log("MongoDB Connected..."))
-  .catch(err => console.log(err));
+
+const MongoClient = require("mongodb").MongoClient;
+//const uri = "mongodb+srv://dbadmin:<password>@projot-prod-gwff0.mongodb.net/test?retryWrites=true";
+const client = new MongoClient(db.mongoURI, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+//  mongoose
+//    .connect(db.mongoURI, { useNewUrlParser: true })
+//  .then(() => console.log("MongoDB Connected..."))
+//    .catch(err => console.log(err));
 
 // Handlebars Middleware
 app.engine(
