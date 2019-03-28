@@ -25,20 +25,10 @@ const db = require("./config/database");
 mongoose.Promise = global.Promise;
 
 // Connect to mongoose
-
-const MongoClient = require("mongodb").MongoClient;
-//const uri = "mongodb+srv://dbadmin:<password>@projot-prod-gwff0.mongodb.net/test?retryWrites=true";
-const client = new MongoClient(db.mongoURI, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
-//  mongoose
-//    .connect(db.mongoURI, { useNewUrlParser: true })
-//  .then(() => console.log("MongoDB Connected..."))
-//    .catch(err => console.log(err));
+mongoose
+  .connect(db.mongoURI, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB Connected..."))
+  .catch(err => console.log(err));
 
 // Handlebars Middleware
 app.engine(
