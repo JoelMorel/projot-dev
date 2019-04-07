@@ -27,7 +27,7 @@ mongoose.Promise = global.Promise;
 // Connect to mongoose
 mongoose
   .connect(db.mongoURI, { useNewUrlParser: true })
-  .then(() => console.log("MongoDB Connected..."))
+  .then(() => console.log("Database connected successfully..."))
   .catch(err => console.log(err));
 
 // Handlebars Middleware
