@@ -4,7 +4,7 @@
   "description": "app to record ideas for future projects",
   "main": "app.js",
   "scripts": {
-    "test": "npm test",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "author": "Joel Morel",
