@@ -21,5 +21,8 @@
     "mongoose": "^5.4.17",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }
